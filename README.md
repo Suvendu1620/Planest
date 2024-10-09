@@ -1,38 +1,30 @@
-# Planest
-# React Redux Toolkit Tailwind Booking App
+# React + TypeScript + Vite
 
-This project is a booking application built with modern web technologies. It's designed as a modular and scalable solution utilizing React, Redux Toolkit, Tailwind CSS, and Vite for rapid application development.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## Table of Contents
+Currently, two official plugins are available:
 
-1. [Introduction](#introduction)
-2. [Features](#features)
-3. [Project Structure](#project-structure)
-4. [Installation](#installation)
-5. [Usage](#usage)
-6. [Contributing](#contributing)
-7. [License](#license)
-8. [Contact](#contact)
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Introduction
+## Expanding the ESLint configuration
 
-The Booking App is a responsive web application that demonstrates how to manage state effectively using the Redux Toolkit while leveraging the styling capabilities of Tailwind CSS. This project is ideal for developers looking to integrate these technologies into their applications.
+If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-## Features
+- Configure the top-level `parserOptions` property like this:
 
-- **State Management:** Powered by Redux Toolkit for efficient and scalable state management.
-- **Styling:** Utilizes Tailwind CSS for rapid and reusable styling.
-- **High Performance:** Developed with Vite for fast development and optimized build processes.
-- **Type Safety:** Built with TypeScript providing complete type safety for more robust applications.
+```js
+export default {
+  // other rules...
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    project: ['./tsconfig.json', './tsconfig.node.json'],
+    tsconfigRootDir: __dirname,
+  },
+}
+```
 
-## Project Structure
-
-```plaintext
-src/
-├── components/       # Reusable components
-├── features/         # Redux slices
-├── hooks/            # Custom hooks
-├── styles/           # Tailwind CSS files
-├── utils/            # Utility functions
-├── App.tsx           # Root component
-└── index.tsx         # Application entry point
+- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
+- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
+- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
