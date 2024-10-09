@@ -1,5 +1,5 @@
-# Planest# 
-React Redux Toolkit Tailwind Booking App
+# Planest
+# React Redux Toolkit Tailwind Booking App
 
 This project is a booking application built with modern web technologies. It's designed as a modular and scalable solution utilizing React, Redux Toolkit, Tailwind CSS, and Vite for rapid application development.
 
